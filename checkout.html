@@ -162,9 +162,81 @@ Image: ${makeImageUrl(item.img)}`;
 
   window.addEventListener("DOMContentLoaded", renderCheckout);
 </script>
+  <script>
+  const CART_STORAGE_KEY = "arcity_cart_v1";
+  const SITE_BASE_URL = "https://arcityonlineshopping.github.io/arcity";
+
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function formatMoney(n) {
+    return "R" + Number(n).toLocaleString("en-ZA");
+  }
+
+  function makeImageUrl(path) {
+    if (!path) return "";
+    if (path.startsWith("http")) return path;
+    if (path.startsWith("/")) return SITE_BASE_URL + path;
+    return SITE_BASE_URL + "/" + path;
+  }
+
+  function renderCheckout() {
+    const cart = getCart();
+
+    const orderText = document.getElementById("order_text");
+    const orderJson = document.getElementById("order_json");
+    const orderHtml = document.getElementById("order_html");
+
+    if (!cart.length) {
+      orderText.value = "Cart empty";
+      orderJson.value = "{}";
+      orderHtml.value = "<p>Cart empty</p>";
+      return;
+    }
+
+    let total = 0;
+
+    const htmlCards = cart.map(item => {
+      const imgURL = makeImageUrl(item.img);
+      const subtotal = item.price * item.qty;
+      total += subtotal;
+
+      return `
+        <div style="border:1px solid #ddd;padding:12px;margin-bottom:10px;">
+          <strong>${item.name}</strong><br>
+          Size: ${item.size} | Qty: ${item.qty}<br>
+          Price: ${formatMoney(item.price)}<br>
+          <img src="${imgURL}" style="width:160px;border-radius:10px;margin-top:6px;">
+          <div><a href="${imgURL}">${imgURL}</a></div>
+        </div>
+      `;
+    }).join("");
+
+    orderText.value = cart.map(item =>
+      `${item.name} | Size ${item.size} | Qty ${item.qty} | Image: ${makeImageUrl(item.img)}`
+    ).join("\n");
+
+    orderJson.value = JSON.stringify(cart, null, 2);
+
+    orderHtml.value = `
+      <h2>ARCITY ORDER</h2>
+      ${htmlCards}
+      <strong>Total: ${formatMoney(total)}</strong>
+    `;
+  }
+
+  window.addEventListener("DOMContentLoaded", renderCheckout);
+</script>
+
 
 <script src="js/checkout.js"></script>
 </body>
 </html>
+
 
 

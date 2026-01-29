@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="cart.html">
+          Cart <span id="cart-count" style="font-weight:800;"></span>
+        </a>
+      </li>
+
+      <li><a href="request.html">Item Request</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+     <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="shop-page">
+  <h1>Your Cart</h1>
+
+  <div class="product-card" style="max-width:1100px;margin:0 auto;">
+    <div id="cart-items"></div>
+
+    <div id="cart-empty" style="display:none;text-align:center;padding:30px;color:#666;">
+      Your cart is empty. Go add shoes by clicking an image.
+    </div>
+
+    <div id="cart-summary"
+      style="margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div id="cart-total" style="font-size:20px;font-weight:900;"></div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button id="clear-cart" class="add-to-cart" style="width:auto;background:#fff;color:#111;border:1px solid #ddd;">
+          Clear Cart
+        </button>
+
+        <a href="checkout.html" class="add-to-cart" style="width:auto;text-decoration:none;text-align:center;">
+          Proceed to Checkout
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+<script>
+  (function () {
+    // Use same key as cart.js (do NOT redeclare CART_KEY)
+    const CART_STORAGE_KEY = (typeof CART_KEY !== "undefined") ? CART_KEY : "arcity_cart_v1";
+
+    function getCart() {
+      try {
+        return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      // update navbar count if cart.js exposes updateCartCount
+      if (typeof updateCartCount === "function") updateCartCount();
+    }
+
+    function formatMoney(n) {
+      return "R" + Number(n).toLocaleString("en-ZA");
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const itemsEl = document.getElementById("cart-items");
+      const emptyEl = document.getElementById("cart-empty");
+      const totalEl = document.getElementById("cart-total");
+      const summaryEl = document.getElementById("cart-summary");
+
+      if (!itemsEl || !emptyEl || !totalEl || !summaryEl) return;
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = "";
+        emptyEl.style.display = "block";
+        summaryEl.style.display = "none";
+        return;
+      }
+
+      emptyEl.style.display = "none";
+      summaryEl.style.display = "flex";
+
+      let total = 0;
+
+      itemsEl.innerHTML = cart.map((item, index) => {
+        const price = Number(item.price || 0);
+        const qty = Number(item.qty || 1);
+        const size = item.size || "N/A";
+        const img = item.img || "images/placeholder.png";
+
+        const subtotal = price * qty;
+        total += subtotal;
+
+        return `
+          <div style="
+            display:flex;
+            gap:14px;
+            align-items:center;
+            padding:14px 0;
+            border-bottom:1px solid #eee;
+            flex-wrap:wrap;
+          ">
+            <img src="${img}" alt="${item.name || "Item"}"
+                 style="width:90px;height:90px;object-fit:cover;border-radius:14px;border:1px solid #eee;">
+
+            <div style="flex:1;min-width:220px;">
+              <div style="font-weight:900;">${item.name || "Item"}</div>
+              <div style="color:#555;font-size:13px;">Size: ${size}</div>
+              <div style="color:#555;font-size:13px;">${formatMoney(price)} each</div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button data-action="dec" data-index="${index}"
+                      style="padding:6px 10px;border-radius:10px;border:1px solid #ddd;background:#f5f5f5;font-weight:900;">
+                −
+              </button>
+
+              <span style="min-width:22px;text-align:center;font-weight:900;">
+                ${qty}
+              </span>
+
+              <button data-action="inc" data-index="${index}"
+                      style="padding:6px 10px;border-radius:10px;border:1px solid #ddd;background:#f5f5f5;font-weight:900;">
+                +
+              </button>
+            </div>
+
+            <div style="font-weight:900;min-width:110px;text-align:right;">
+              ${formatMoney(subtotal)}
+            </div>
+
+            <button data-action="remove" data-index="${index}"
+                    style="border:none;background:none;color:#c00;font-weight:900;cursor:pointer;">
+              Remove
+            </button>
+          </div>
+        `;
+      }).join("");
+
+      totalEl.textContent = `Total: ${formatMoney(total)}`;
+    }
+
+    // Event delegation for + / - / remove
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-action]");
+      if (!btn) return;
+
+      const action = btn.dataset.action;
+      const index = Number(btn.dataset.index);
+      const cart = getCart();
+
+      if (!cart[index]) return;
+
+      if (action === "inc") cart[index].qty = (Number(cart[index].qty) || 1) + 1;
+
+      if (action === "dec") {
+        cart[index].qty = (Number(cart[index].qty) || 1) - 1;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+      }
+
+      if (action === "remove") cart.splice(index, 1);
+
+      saveCart(cart);
+      renderCart();
+    });
+
+    // Clear cart button
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      saveCart([]);
+      renderCart();
+    });
+
+    renderCart();
+  })();
+</script>
+
+</body>
+</html>

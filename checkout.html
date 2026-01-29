@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" style="font-weight:800;"></span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="shop-page">
+  <h1>Checkout</h1>
+
+  <div class="product-card" style="max-width:900px;margin:0 auto;">
+    <h2>Order Summary</h2>
+    <div id="order-summary" style="margin-top:12px;"></div>
+    <div id="order-total" style="margin-top:14px;font-weight:900;"></div>
+  </div>
+
+  <div class="product-card" style="max-width:900px;margin:18px auto;">
+    <h2>Your Details</h2>
+
+    <!-- ✅ REPLACE the action URL with your Formspree endpoint -->
+    <form id="order-form" action="https://formspree.io/f/xnjvpknj" method="POST">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;">
+        <div>
+          <label style="font-weight:800;font-size:12px;">Full Name</label>
+          <input name="name" required class="limited-search" style="color:#111;background:#fafafa;border:1px solid #e6e6e6;" />
+        </div>
+
+        <div>
+          <label style="font-weight:800;font-size:12px;">Phone</label>
+          <input name="phone" required class="limited-search" style="color:#111;background:#fafafa;border:1px solid #e6e6e6;" />
+        </div>
+
+        <div>
+          <label style="font-weight:800;font-size:12px;">Email</label>
+          <input name="email" type="email" required class="limited-search" style="color:#111;background:#fafafa;border:1px solid #e6e6e6;" />
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <label style="font-weight:800;font-size:12px;">Delivery Address</label>
+        <textarea name="address" required rows="4" class="limited-search"
+          style="color:#111;background:#fafafa;border:1px solid #e6e6e6;resize:vertical;"></textarea>
+      </div>
+
+      <!-- Hidden fields (we fill these using JS) -->
+      <input type="hidden" name="order_text" id="order_text" />
+      <input type="hidden" name="order_json" id="order_json" />
+
+      <button class="add-to-cart" type="submit" style="margin-top:14px;">
+        Submit Order
+      </button>
+
+      <p style="margin-top:10px;color:#666;font-size:12px;">
+        Your email will receive the order details including image links/paths.
+      </p>
+    </form>
+  </div>
+</section>
+
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

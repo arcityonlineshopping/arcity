@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Item Request | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="cart.html">Cart <span id="cart-count" style="font-weight:800;"></span></a></li>
+      <li><a class="active-link" href="request.html">Item Request</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="request-hero">
+  <div class="request-hero-inner">
+    <span class="request-chip">Request a Pair</span>
+    <h1>Can’t find your size or color?</h1>
+    <p>Tell us what you want and we’ll see if we can source it for you.</p>
+  </div>
+</section>
+
+<section class="shop-page">
+  <div class="request-wrap">
+    <div class="product-card request-card">
+      <h2>Item Request Form</h2>
+      <p class="request-sub">Fill in the details below. The more specific you are, the better.</p>
+
+      <!-- ✅ Replace action with your Formspree endpoint -->
+      <form id="requestForm" action="https://formspree.io/f/xnjvpknj" method="POST">
+
+        <div class="request-grid">
+          <div>
+            <label>Full Name</label>
+            <input name="name" type="text" required placeholder="Your name" />
+          </div>
+
+          <div>
+            <label>Phone Number</label>
+            <input name="phone" type="tel" required placeholder="e.g. 06X XXX XXXX" />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input name="email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div>
+            <label>Brand</label>
+            <select name="brand" required>
+              <option value="">Select brand</option>
+              <option>Nike</option>
+              <option>Adidas</option>
+              <option>New Balance</option>
+              <option>Lacoste</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label>Shoe Name / Model</label>
+            <input name="shoe_model" type="text" required placeholder="e.g. Nike Dunk Low / Air Force 1 / Jordan 4..." />
+          </div>
+
+          <div>
+            <label>Requested Size</label>
+            <select name="size" required>
+              <option value="">Select size</option>
+              <option>3</option><option>4</option><option>5</option><option>6</option>
+              <option>7</option><option>8</option><option>9</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Budget Range</label>
+            <select name="budget" required>
+              <option value="">Select budget</option>
+              <option>R1,000 – R1,500</option>
+              <option>R1,500 – R2,000</option>
+              <option>R2,000 – R2,500</option>
+              <option>R2,500+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="request-colors">
+          <label>Preferred Colors (select all that apply)</label>
+
+          <div class="color-grid">
+            <label class="color-pill"><input type="checkbox" name="colors" value="Black"> Black</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="White"> White</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Grey"> Grey</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Beige"> Beige</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Blue"> Blue</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Sky Blue"> Sky Blue</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Red"> Red</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Pink"> Pink</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Green"> Green</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Brown"> Brown</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Gold"> Gold</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Orange"> Orange</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Purple"> Purple</label>
+            <label class="color-pill"><input type="checkbox" name="colors" value="Maroon"> Maroon</label>
+            <label class="color-pill"><input type="checkbox" id="otherColorChk" name="colors" value="Other"> Other</label>
+          </div>
+
+          <div id="otherColorWrap" class="other-color" style="display:none;">
+            <label>Other Color (type it)</label>
+            <input type="text" name="other_color" placeholder="e.g. Navy Blue / Silver / Cream..." />
+          </div>
+        </div>
+
+        <div class="request-grid" style="margin-top:14px;">
+          <div class="full">
+            <label>Reference Link (optional)</label>
+            <input name="reference_link" type="url" placeholder="Paste a link to the shoe (Nike, StockX, Google image, etc.)" />
+          </div>
+
+          <div class="full">
+            <label>Extra Notes (optional)</label>
+            <textarea name="notes" rows="4" placeholder="e.g. Need white + green, or send pictures if available..."></textarea>
+          </div>
+        </div>
+
+        <!-- A clean summary that will show in the email -->
+        <input type="hidden" name="request_summary" id="request_summary" />
+
+        <button class="add-to-cart request-btn" type="submit">
+          Submit Request
+        </button>
+
+        <p id="requestHint" class="hint" style="margin-top:10px;">
+          We’ll reply with availability and pricing.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/request.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payments | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="cart.html">Cart <span id="cart-count" style="font-weight:800;"></span></a></li>
+      <li><a href="request.html">Item Request</a></li>
+      <li><a class="active-link" href="payments.html">Payments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="payments-hero">
+  <div class="payments-hero-inner">
+    <span class="payments-chip">Secure Payment</span>
+    <h1>Payments</h1>
+    <p>Orders are processed only after proof of payment is received.</p>
+  </div>
+</section>
+
+<section class="shop-page">
+  <div class="payments-wrap">
+
+    <!-- BANKING DETAILS -->
+    <div class="product-card payments-card">
+      <h2>Banking Details</h2>
+
+      <div class="payments-details">
+        <div class="pay-row">
+          <span class="pay-label">Bank</span>
+          <span class="pay-value">Capitec</span>
+        </div>
+
+        <div class="pay-row">
+          <span class="pay-label">Account Number</span>
+          <span class="pay-value">1934607124</span>
+        </div>
+
+        <div class="pay-row">
+          <span class="pay-label">PayShap ID</span>
+          <span class="pay-value">0818411130@capitec</span>
+        </div>
+      </div>
+
+      <div class="payments-note">
+        <strong>Payment Reference:</strong><br>
+        Please use <b>Your Name + Phone Number</b> as the payment reference.<br>
+        <i>Example: Sipho 0818411130</i>
+      </div>
+    </div>
+
+    <!-- SEND PROOF -->
+    <div class="product-card payments-card">
+      <h2>Send Proof of Payment</h2>
+      <p class="payments-sub">
+        After making payment, send your proof of payment on WhatsApp.
+      </p>
+
+      <div class="request-grid" style="margin-top:12px;">
+        <div>
+          <label>Your Full Name</label>
+          <input id="payerName" type="text" placeholder="e.g. Sipho" />
+        </div>
+
+        <div>
+          <label>Your Phone Number</label>
+          <input id="payerPhone" type="tel" placeholder="e.g. 0818411130" />
+        </div>
+
+        <div class="full">
+          <label>Message (optional)</label>
+          <textarea id="payerMsg" rows="4"
+            placeholder="Hi Arcity, please find my proof of payment attached."></textarea>
+        </div>
+      </div>
+
+      <button id="sendProofBtn" class="add-to-cart" style="margin-top:14px;">
+        Send Proof of Payment (WhatsApp)
+      </button>
+
+      <p class="hint" style="margin-top:10px;">
+        Attach your proof using the 📎 button in WhatsApp.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/payments.js"></script>
+</body>
+</html>

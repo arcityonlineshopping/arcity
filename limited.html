@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limited Editions | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="cart.html">Cart <span id="cart-count" style="font-weight:800;"></span></a></li>
+      <li><a href="request.html">Item Request</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="limited-hero">
+  <div class="limited-hero-inner">
+    <span class="limited-chip">🔥 Limited Drops</span>
+    <h1>Limited Editions</h1>
+    <p>Exclusive pairs. Small quantities. When it’s gone, it’s gone.</p>
+
+    <div class="limited-controls">
+      <input id="searchInput" class="limited-search" type="search" placeholder="Search limited editions..." />
+      <div class="limited-filters">
+        <button class="filter-btn active" data-brand="all">All</button>
+        <button class="filter-btn" data-brand="nike">Nike</button>
+        <button class="filter-btn" data-brand="adidas">Adidas</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-page limited-page">
+  <div class="product-grid" id="limitedGrid">
+
+    <!-- 1 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Limited addition Nike Dunk low">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Limited addition Nike Dunk low</h2>
+      <p class="price">R2,000</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-low-r2000"
+           data-name="Limited addition Nike Dunk low"
+           data-price="2000">
+        <img src="images/Limited edditions/Limited adition Nike Dunk low Price R2000 SIZE 3-9.jpeg" data-img="images/Limited edditions/Limited adition Nike Dunk low Price R2000 SIZE 3-9.jpeg" alt="Limited Nike Dunk Low">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="product-card limited-card" data-brand="adidas" data-title="Limited edition Adidas Forum Mod Low">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Limited edition Adidas Forum Mod Low</h2>
+      <p class="price">R2,200</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-adidas-forum-mod-low-r2200"
+           data-name="Limited edition Adidas Forum Mod Low"
+           data-price="2200">
+        <img src="images/Limited edditions/Limited edition Adidas Forum Mod Low Price R2200 SIZE 3-9.jpeg" data-img="images/Limited edditions/Limited edition Adidas Forum Mod Low Price R2200 SIZE 3-9.jpeg" alt="Limited Adidas Forum Mod Low">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 3 (price/size not shown in screenshot) -->
+    <div class="product-card limited-card" data-brand="adidas" data-title="Limited edition Adidas Originals Superstar x Melting Sadness">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Limited edition Adidas Originals Superstar x Melting Sadness</h2>
+      <p class="price">Price: R2000</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select" disabled>
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-adidas-superstar-melting-sadness"
+           data-name="Limited edition Adidas Originals Superstar x Melting Sadness"
+           data-price="R2000">
+        <img src="images/Limited edditions/Limited edition Adidas Originals Superstar x Melting Sadness.jpeg" data-img="images/Limited edditions/Limited edition Adidas Originals Superstar x Melting Sadness.jpeg" alt="Limited Superstar x Melting Sadness">
+      </div>
+
+      <p class="hint">Add price & sizes later (click still works after update).</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Limited edition Nike dunk low">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Limited edition Nike dunk low</h2>
+      <p class="price">R2,200</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-low-r2200-3-6"
+           data-name="Limited edition Nike dunk low"
+           data-price="2200">
+        <img src="images/Limited edditions/Limited edition Nike dunk low Price R2200 Size 3-6.jpeg" data-img="images/Limited edditions/Limited edition Nike dunk low Price R2200 Size 3-6.jpeg" alt="Limited Nike Dunk Low (3-6)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike air force 1 Limited addition">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike air force 1 Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-af1-r1700"
+           data-name="Nike air force 1 Limited addition"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike air force 1 Limited addition Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike air force 1 Limited addition Price R1700 SIZE 3-9.jpeg" alt="Limited AF1">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk Limited addition (2)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-2-r1700"
+           data-name="Nike Dunk Limited addition (2)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk Limited addition (2) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk Limited addition (2) Price R1700 SIZE 3-9.jpeg" alt="Limited Nike Dunk (2)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk Limited addition (3)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-3-r1700"
+           data-name="Nike Dunk Limited addition (3)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk Limited addition (3) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk Limited addition (3) Price R1700 SIZE 3-9.jpeg" alt="Limited Nike Dunk (3)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk Low Jean Limited addition (1)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk Low Jean Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jean-1-r1700"
+           data-name="Nike Dunk Low Jean Limited addition (1)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk Low Jean Limited addition (1) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk Low Jean Limited addition (1) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jean (1)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk Low Jean Limited addition (2)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk Low Jean Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jean-2-r1700"
+           data-name="Nike Dunk Low Jean Limited addition (2)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk Low Jean Limited addition (2) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk Low Jean Limited addition (2) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jean (2)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk Low Jean Limited addition (3)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk Low Jean Limited addition</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jean-3-r1700"
+           data-name="Nike Dunk Low Jean Limited addition (3)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk Low Jean Limited addition (3) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk Low Jean Limited addition (3) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jean (3)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk low Jeans (1)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk low Jeans</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jeans-1-r1700"
+           data-name="Nike Dunk low Jeans (1)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk low Jeans (1) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk low Jeans (1) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jeans (1)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 12 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk low Jeans (2)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk low Jeans</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jeans-2-r1700"
+           data-name="Nike Dunk low Jeans (2)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk low Jeans (2) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk low Jeans (2) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jeans (2)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 13 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk low Jeans (3)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk low Jeans</h2>
+      <p class="price">R1,900</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jeans-3-r1900"
+           data-name="Nike Dunk low Jeans (3)"
+           data-price="1900">
+        <img src="images/Limited edditions/Nike Dunk low Jeans (3) Price R1900 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk low Jeans (3) Price R1900 SIZE 3-9.jpeg" alt="Dunk Low Jeans (3)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 14 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Dunk low Jeans (4)">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Dunk low Jeans</h2>
+      <p class="price">R1,700</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-nike-dunk-jeans-4-r1700"
+           data-name="Nike Dunk low Jeans (4)"
+           data-price="1700">
+        <img src="images/Limited edditions/Nike Dunk low Jeans (4) Price R1700 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Dunk low Jeans (4) Price R1700 SIZE 3-9.jpeg" alt="Dunk Low Jeans (4)">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+    <!-- 15 -->
+    <div class="product-card limited-card" data-brand="nike" data-title="Nike Jordan 4 limited edition">
+      <div class="limited-badge">LIMITED</div>
+      <h2>Nike Jordan 4 limited edition</h2>
+      <p class="price">R2,000</p>
+
+      <div class="pickers">
+        <label>Size</label>
+        <select class="size-select">
+          <option value="">Select size</option>
+          <option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </div>
+
+      <div class="product-images"
+           data-id="limited-jordan-4-r2000"
+           data-name="Nike Jordan 4 limited edition"
+           data-price="2000">
+        <img src="images/Limited edditions/Nike Jordan 4 limited edition Price R2000 SIZE 3-9.jpeg" data-img="images/Limited edditions/Nike Jordan 4 limited edition Price R2000 SIZE 3-9.jpeg" alt="Limited Jordan 4">
+      </div>
+
+      <p class="hint">Pick a size, then click the image to add to cart.</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+<script>
+  // Simple Search + Brand filter
+  const grid = document.getElementById("limitedGrid");
+  const searchInput = document.getElementById("searchInput");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+
+  let activeBrand = "all";
+
+  function applyFilters() {
+    const q = (searchInput.value || "").trim().toLowerCase();
+
+    [...grid.querySelectorAll(".product-card")].forEach(card => {
+      const brand = card.dataset.brand;
+      const title = (card.dataset.title || "").toLowerCase();
+
+      const matchBrand = activeBrand === "all" || brand === activeBrand;
+      const matchSearch = !q || title.includes(q);
+
+      card.style.display = (matchBrand && matchSearch) ? "" : "none";
+    });
+  }
+
+  searchInput.addEventListener("input", applyFilters);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeBrand = btn.dataset.brand;
+      applyFilters();
+    });
+  });
+</script>
+
+</body>
+</html>

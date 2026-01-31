@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fallback: if CSS breaks, page still visible -->
+  <style>
+    body { background:#fff; color:#111; }
+    .fallback-wrap { max-width:1100px; margin:0 auto; padding:24px 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="cart.html">Cart <span id="cart-count" style="font-weight:800;"></span></a></li>
+      <li><a href="request.html">Item Request</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a class="active-link" href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="fallback-wrap">
+  <h1 style="font-size:42px; margin:20px 0 10px;">Contact Arcity</h1>
+  <p style="color:#444; max-width:720px;">
+    Have a question, need help with an order, or looking for a specific sneaker?
+    Reach out — we’re here to help.
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:18px;">
+    <div class="product-card" style="padding:22px; border-radius:18px;">
+      <h2>Contact Details</h2>
+
+      <div style="margin-top:12px;">
+        <div style="display:flex; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px solid #eee;">
+          <strong>Email</strong>
+          <a href="mailto:arcityonlineshopping@gmail.com">arcityonlineshopping@gmail.com</a>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; gap:12px; padding:12px 0;">
+          <strong>Cell Number</strong>
+          <a href="tel:0818411130">081 841 1130</a>
+        </div>
+      </div>
+
+      <p style="margin-top:12px; color:#666; font-size:14px;">
+        We aim to respond as quickly as possible during business hours.
+      </p>
+    </div>
+
+    <div class="product-card" style="padding:22px; border-radius:18px;">
+      <h2>Send a Message</h2>
+      <p style="color:#666; margin-top:6px;">(Optional) You can connect this form to Formspree later.</p>
+
+      <form onsubmit="event.preventDefault(); alert('To enable this form, connect it to Formspree.');" style="margin-top:12px;">
+        <label style="font-weight:800; font-size:12px;">Full Name</label>
+        <input required style="width:100%; padding:12px 14px; border:1px solid #e6e6e6; border-radius:14px; background:#fafafa; margin:8px 0 12px;" />
+
+        <label style="font-weight:800; font-size:12px;">Email</label>
+        <input type="email" required style="width:100%; padding:12px 14px; border:1px solid #e6e6e6; border-radius:14px; background:#fafafa; margin:8px 0 12px;" />
+
+        <label style="font-weight:800; font-size:12px;">Message</label>
+        <textarea rows="5" required style="width:100%; padding:12px 14px; border:1px solid #e6e6e6; border-radius:14px; background:#fafafa; margin:8px 0 12px;"></textarea>
+
+        <button class="add-to-cart" type="submit" style="width:auto;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

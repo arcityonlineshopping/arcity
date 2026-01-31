@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extras | Arcity</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Arcity Logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="nike.html">Nike</a></li>
+          <li><a href="newbalance.html">New Balance</a></li>
+          <li><a href="lacoste.html">Lacoste</a></li>
+          <li><a href="adidas.html">Adidas</a></li>
+          <li><a class="active-link" href="extras.html">Extras</a></li>
+          <li><a href="limited.html">Limited Editions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="cart.html">Cart <span id="cart-count"></span></a></li>
+      <li><a href="request.html">Item Request</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="shop-hero">
+  <div class="shop-hero-inner">
+    <span class="shop-chip">Accessories & More</span>
+    <h1>Extras</h1>
+    <p>Footwear and accessories beyond sneakers.</p>
+  </div>
+</section>
+
+<section class="shop-page">
+  <div class="products-grid">
+
+    <!-- Converse Chuck 70 Plus -->
+    <div class="product-card">
+      <div class="product-images">
+        <img src="images/Extras/converse (1).jpeg" alt="">
+        <img src="images/Extras/converse (2).jpeg" alt="">
+        <img src="images/Extras/converse (3).jpeg" alt="">
+        <img src="images/Extras/converse (4).jpeg" alt="">
+      </div>
+
+      <h3>Converse Chuck 70 Plus (High-Top)</h3>
+      <p class="price">R1,500</p>
+      <p class="meta">Sizes: 3 – 9</p>
+
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- The North Face Glenclyffe Low -->
+    <div class="product-card">
+      <div class="product-images">
+        <img src="images/Extras/northface (1).jpeg" alt="">
+        <img src="images/Extras/northface (2).jpeg" alt="">
+        <img src="images/Extras/northface (3).jpeg" alt="">
+        <img src="images/Extras/northface (4).jpeg" alt="">
+      </div>
+
+      <h3>The North Face Glenclyffe Low</h3>
+      <p class="price">R2,200</p>
+      <p class="meta">Sizes: 6 – 9</p>
+
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+   <!-- Lacoste Sunglasses -->
+<div class="product-card">
+  <div class="product-images"
+       data-id="lacoste-sunglasses"
+       data-name="Lacoste L984S Square Sunglasses"
+       data-price="700">
+
+    <!-- SINGLE IMAGE ONLY -->
+    <img src="images/Extras/shades.jpeg"
+         alt="Lacoste L984S Square Sunglasses"
+         onerror="this.src='images/Extras/shades.jpeg'">
+  </div>
+
+  <h3>Lacoste L984S Square Sunglasses</h3>
+  <p class="price">R700</p>
+
+  <!-- COLOUR SELECTOR (reuses size-select safely) -->
+  <label class="meta">Choose Colour</label>
+  <select class="size-select">
+    <option value="">Select colour</option>
+    <option value="Black">Black</option>
+    <option value="Brown">Brown</option>
+  </select>
+
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
